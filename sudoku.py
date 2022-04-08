@@ -144,9 +144,6 @@ def sudoku_solver(puzzle):
     """sudoku solver"""
     if not valid_grid(puzzle):
         return 'invalid grid'
-#tests do not accept all valid answers just the one answer
-    if puzzle[0] == lewagon_sud[0]:
-        return lewagon_answer
     if sudoku_validator(puzzle):
         return puzzle
     candidates = deepcopy(puzzle)
@@ -156,7 +153,7 @@ def sudoku_solver(puzzle):
         return puzzle
     return False
 
-
+if __name__ == "__main__":
     test_sud =   [
             [7,0,0,  0,0,0,  0,0,6],
             [0,0,0,  6,0,0,  0,4,0],
@@ -170,3 +167,4 @@ def sudoku_solver(puzzle):
             [0,4,0,  5,0,0,  0,0,0],
             [0,0,5,  0,0,7,  0,0,4]
         ]
+    print(sudoku_solver(test_sud))
